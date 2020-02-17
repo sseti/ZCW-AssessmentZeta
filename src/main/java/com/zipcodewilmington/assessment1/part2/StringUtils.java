@@ -50,7 +50,7 @@ public class StringUtils<str> {
 
         return reverse;
     }
-    
+
 
     /**
      * @param sentence a string containing words delimited by spaces, representative of a sentence
