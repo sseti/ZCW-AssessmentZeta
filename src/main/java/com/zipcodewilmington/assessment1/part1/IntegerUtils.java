@@ -11,22 +11,37 @@ public class IntegerUtils {
      * @return the sum of all integers between 0 and not including `n`
      */
     public static Integer getSumOfN(Integer n) {
-        return null;
+        int result = 0;
+        for (int i = 1; i <= n; i++){
+            result += i;
+        }
+        return result;
     }
+
 
     /**
      * @param n integer value input by client
      * @return the product of all integers between 0 and not including `n`
      */
     public static Integer getProductOfN(Integer n) {
-        return null;
+        int result = 1;
+        for (int i = 1; i <= n; i++){
+            result *= i;
+        }
+        return result;
     }
+
 
     /**
      * @param val integer value input by client
      * @return integer with identical digits in the reverse order
      */
     public static Integer reverseDigits(Integer val) {
-        return null;
+        int result = 0;
+        for (int i = val; i !=0; i /= 10) {
+            result = result * 10 + i % 10;
+        }
+        return result;
     }
-}
+    }
+
