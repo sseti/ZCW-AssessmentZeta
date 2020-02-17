@@ -1,5 +1,6 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -29,8 +30,23 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        return null;
+        if (objectArray == null) {
+            return null;
+        } else if (objectArray.length <= 0) {
+            return objectArray;
+        } else {
+            Object[] output = new String[objectArray.length - 1];
+            int count = 0;
+            for (Object i : objectArray) {
+                if (!i.equals(objectToRemove)) {
+                    output[count++] = i;
+                }
+            }
+            return output;
+        }
     }
+
+
 
     /**
      * @param objectArray an array of any type of Object
@@ -41,17 +57,16 @@ public class ArrayUtils {
         HashMap<Object, Integer> hm = new HashMap<>();
         int maximum = 1;
         int temp = 0;
-        for (int i = 0; i < objectArray.length; i++){
-            if (hm.get(objectArray[i]) != null){
+        for (int i = 0; i < objectArray.length; i++) {
+            if (hm.get(objectArray[i]) != null) {
                 int count = hm.get(objectArray[i]);
-                count ++;
+                count++;
                 hm.put(objectArray[i], count);
                 if (count > maximum) {
                     maximum = count;
                     temp = (int) objectArray[i];
                 }
-            }
-            else
+            } else
                 hm.put(objectArray[i], 1);
         }
         return temp;
@@ -74,6 +89,10 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        return null;
+
+        Object[] ob = Arrays.copyOf(objectArray, objectArray.length + objectArrayToAdd.length);
+        System.arraycopy(objectArrayToAdd, 0, ob, objectArray.length, objectArrayToAdd.length);
+        return ob;
     }
 }
+

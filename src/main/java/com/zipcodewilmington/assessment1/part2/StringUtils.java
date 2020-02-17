@@ -32,9 +32,25 @@ public class StringUtils<str> {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word with identical contents in reverse order
      */
     public static String reverseFirstWord(String sentence) {
-        return null;
-    }
 
+        int strLeng = sentence.length()-1;
+        String reverse = "", temp = "";
+
+        for(int i = 0; i <= strLeng; i++){
+            temp += sentence.charAt(i);
+            if((sentence.charAt(i) == ' ') || (i == strLeng)){
+                for(int j = temp.length()-1; j >= 0; j--){
+                    reverse += temp.charAt(j);
+                    if((j == 0) && (i != strLeng))
+                        reverse += " ";
+                }
+                temp = "";
+            }
+        }
+
+        return reverse;
+    }
+    
 
     /**
      * @param sentence a string containing words delimited by spaces, representative of a sentence
