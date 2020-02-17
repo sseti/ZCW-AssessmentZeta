@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.HashMap;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -11,7 +13,13 @@ public class ArrayUtils {
      * Given an array of objects, named `objectArray`, and an object `objectToCount`, return the number of times the `objectToCount` appears in the `objectArray`
      */
     public static Integer getNumberOfOccurrences(Object[] objectArray, Object objectToCount) {
-        return null;
+        int count = 0;
+        for (int i = 0; i < objectArray.length; i++) {
+            if (objectArray[i] == objectToCount) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -30,7 +38,23 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
     public static Object getMostCommon(Object[] objectArray) {
-        return null;
+        HashMap<Object, Integer> hm = new HashMap<>();
+        int maximum = 1;
+        int temp = 0;
+        for (int i = 0; i < objectArray.length; i++){
+            if (hm.get(objectArray[i]) != null){
+                int count = hm.get(objectArray[i]);
+                count ++;
+                hm.put(objectArray[i], count);
+                if (count > maximum) {
+                    maximum = count;
+                    temp = (int) objectArray[i];
+                }
+            }
+            else
+                hm.put(objectArray[i], 1);
+        }
+        return temp;
     }
 
 
