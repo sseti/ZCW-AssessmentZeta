@@ -44,4 +44,6 @@ public class IntegerUtils {
         return result;
     }
     }
-
+// String s = Integer.toString(val);
+//s = BasicStringUtils.reverse(s);
+//return new Integer(s);

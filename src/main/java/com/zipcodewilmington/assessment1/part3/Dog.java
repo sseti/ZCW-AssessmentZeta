@@ -9,19 +9,19 @@ public class Dog extends Pet {
      * @param age age of this dog
      */
     public Dog(String name, Integer age) {
-
+    super(name,age);
     }
 
     /**
      * @param age age of this dog
      */
-    public Dog(Integer age) {
+    public Dog(Integer age) { super("Dog name",age);
     }
 
     /**
      * @param name name of this dog
      */
-    public Dog(String name) {
+    public Dog(String name) { super(name);
 
     }
 
@@ -31,7 +31,7 @@ public class Dog extends Pet {
      * name is DogName
      * age is 0
      */
-    public Dog() {
+    public Dog() { super("Dog name");
     }
 
     /**

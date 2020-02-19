@@ -9,7 +9,7 @@ public class Jumper {
      */
     public int jumps(int k, int j) {
 
-        return -1;
+        return k/j + k%j;
     }
 }
 

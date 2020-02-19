@@ -18,6 +18,11 @@ public class IntegerArrayUtils {
         return sum;
     }
 
+    //for each loops, gives your value
+
+    //for (int i : intArray) {
+
+    // }
 
     /**
      * @param intArray an array of integers
@@ -31,7 +36,7 @@ public class IntegerArrayUtils {
         return result;
     }
 
-
+// had to multiply by 1..
     /**
      * @param intArray an array of integers
      * @return the sum of `intArray` divided by number of elements in `intArray`
@@ -49,3 +54,5 @@ public class IntegerArrayUtils {
         return average;
     }
 }
+
+// return Double.valueOf(getSum(intArray)/intArray.length);
